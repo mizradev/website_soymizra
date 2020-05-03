@@ -5,7 +5,7 @@
     >
       <ImageResponsive
         :imageURL="`blog/${blog.id}/_thumbnail.jpg`"
-        :classes="'cardThumbnail'"
+        :classes="'cardThumbnail rounded-lg'"
         :width="'952'"
         :height="'509'"
         :alt="blog.cardAlt" />
@@ -49,12 +49,12 @@
 
     &:hover {
       .blog__title {
-        color: $primary;
+        color: green;
       }
     }
 
     &__title {
-      font-family: 'Tiempos Headline', Arial, sans-serif;
+      font-family: 'Rubik', Arial, sans-serif;
       color: $secondary;
       padding-top: 1rem;
       font-size: 2.5rem;

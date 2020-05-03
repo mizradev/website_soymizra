@@ -8,7 +8,7 @@ import mip from 'markdown-it-prism'
 
 function getPaths (lang, type) {
   let initial = lang
-  if (lang === 'en') { initial = '' }
+  if (lang === 'es') { initial = '' }
   return fs.readdirSync(path.resolve(__dirname, 'contents', `${lang}/${type}`))
     .filter(filename => path.extname(filename) === '.md')
     .map(filename => `${initial}/${type}/${path.parse(filename).name}`)
@@ -24,7 +24,7 @@ const productionUrl = {
   en: "/en",
   es: "/es"
 };
-const baseUrl = 'https://marinaaisa.com';
+const baseUrl = 'https://soymizra.com';
 
 module.exports = {
   env: {
@@ -32,7 +32,7 @@ module.exports = {
     productionUrl
   },
   head: {
-    title: 'Marina Aisa | Product Designer & Front-end Developer',
+    title: 'Jorge Aguilar | Product Designer & Front-end Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
@@ -41,7 +41,7 @@ module.exports = {
       { name: 'theme-color', content: '#c1c1c1' },
       { name: 'robots', content: 'index, follow' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@marinaaisa' },
+      { name: 'twitter:site', content: '@soymizra' },
       { property: 'og:type', content: 'profile' },
       { property: 'og:updated_time', content: builtAt }
     ],
@@ -59,7 +59,11 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-144x144.png', sizes: '144x144' },
       { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-152x152.png', sizes: '152x152' },
       { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-180x180.png', sizes: '180x180' },
-      { rel: 'mask-icon', type: 'image/png', href: '/favicons/safari-pinned-tab.svg', color: '#c1c1c1' }
+      { rel: 'mask-icon', type: 'image/png', href: '/favicons/safari-pinned-tab.svg', color: '#c1c1c1' },
+      {rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'}
+    ],
+    script:[
+      {src:'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'}
     ]
   },
   /*
@@ -133,7 +137,7 @@ module.exports = {
 
   webfontloader: {
     custom: {
-      families: ['Graphik', 'Tiempos Headline'],
+      families: ['Rubik','Graphik', 'Tiempos Headline'],
       urls: ['/fonts/fonts.css']
     }
   },
